@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Example
 {
-    internal class EventHandlers
+    internal class EventHandler
     {
         internal void OnWaitingForPlayers()
         {
