@@ -6,7 +6,7 @@ namespace Example
     public class Plugin : Plugin<Config>
     {
         public static Plugin Instance;
-        internal EventHandlers EventHandlers = new EventHandlers();
+        internal EventHandler EventHandler = new EventHandler();
         public override PluginPriority Priority { get; } = PluginPriority.Last;
         public Plugin() => Instance = this;
         public string PluginName => typeof(Plugin).Namespace;
@@ -18,11 +18,11 @@ namespace Example
         public override void OnDisabled() => UnregisterEvents();
         private void RegisterEvents()
         {
-            Exiled.Events.Handlers.Server.WaitingForPlayers += EventHandlers.OnWaitingForPlayers;
+            Exiled.Events.Handlers.Server.WaitingForPlayers += EventHandler.OnWaitingForPlayers;
         }
         private void UnregisterEvents()
         {
-            Exiled.Events.Handlers.Server.WaitingForPlayers -= EventHandlers.OnWaitingForPlayers;
+            Exiled.Events.Handlers.Server.WaitingForPlayers -= EventHandler.OnWaitingForPlayers;
         }
     }
 }
