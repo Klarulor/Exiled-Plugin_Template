@@ -9,5 +9,8 @@ namespace Example
     {
         [Description("Enable")]
         public bool IsEnabled { get; set; } = true;
+
+        [Description("Debug")]
+        public bool Debug { get; set; } = true;
     }
 }
